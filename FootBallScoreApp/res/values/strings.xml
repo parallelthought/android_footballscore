@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">footballDB</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_activity_ranking">CurrentRanking</string>
+    <string name="rankingTitle">Ranking Page</string>
+    <string name="btnStrRanking">Ranking</string>
+    <string name="firstPage">First Page</string>
+    <string name="serverUrl">https://www.dein-weg-in-die-cloud.de/tomcat7</string>
+
+</resources>
