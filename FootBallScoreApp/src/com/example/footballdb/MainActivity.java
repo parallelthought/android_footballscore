@@ -62,13 +62,24 @@ public class MainActivity extends ActionBarActivity {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             
             Button btnRanking = (Button) rootView.findViewById(R.id.btnRanking);
+            Button btnResult = (Button) rootView.findViewById(R.id.btnResult);
+            
             btnRanking.setOnClickListener(new View.OnClickListener() {
 				
-            	
             	//onClick and opening of Intent or a new view
 				@Override
 				public void onClick(View v) {
 					Intent i = new Intent (v.getContext(), ActivityRanking.class);
+					startActivity(i);
+				}
+			});
+            
+            //Code for action on button click for results
+            btnResult.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					Intent i = new Intent (v.getContext(), ActivityResult.class);
 					startActivity(i);
 				}
 			});

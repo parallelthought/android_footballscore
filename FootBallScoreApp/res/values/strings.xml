@@ -7,7 +7,11 @@
     <string name="title_activity_activity_ranking">CurrentRanking</string>
     <string name="rankingTitle">Ranking Page</string>
     <string name="btnStrRanking">Ranking</string>
-    <string name="firstPage">First Page</string>
+    <string name="firstPage">Opening Page</string>
     <string name="serverUrl">https://www.dein-weg-in-die-cloud.de/tomcat7</string>
+    <string name="ranking">Ranking</string>
+    <string name="result">Result</string>
+    <string name="resultPage">Result Page</string>
+    <string name="title_activity_activity_result">ActivityResult</string>
 
 </resources>
