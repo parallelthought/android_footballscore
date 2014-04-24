@@ -13,5 +13,6 @@
     <string name="result">Result</string>
     <string name="resultPage">Result Page</string>
     <string name="title_activity_activity_result">ActivityResult</string>
+    <string name="resultURL">https://www.dein-weg-in-die-cloud.de/tomcat7/RestSoccer/fussball/spieltag/23</string>
 
 </resources>

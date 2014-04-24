@@ -52,14 +52,15 @@ public class ActivityResult extends ActionBarActivity {
 	 */
 	public static class PlaceholderFragment extends ListFragment {
 		
-		private ArrayList<FootballResultModel> footballResultList;
-		private FootballResultAdapter footballResultAdapter;
-		
 		public PlaceholderFragment() {
 		}
 
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
+			
+			ArrayList<FootballResultModel> footballResultList;
+			FootballResultAdapter footballResultAdapter;
+			
 			View rootView = inflater.inflate(R.layout.fragment_result,
 					container, false);
 			

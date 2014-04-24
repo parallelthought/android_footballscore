@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent" 
+    android:orientation="horizontal" >
+    
+     <TextView 
+        android:id="@+id/tvTeamOneName"
+        android:textColor="#FFFFFF"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        />
+    <ImageView 
+        android:id="@+id/ivTeamOneLogo"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"/>
+ 	<TextView 
+ 	    android:id="@+id/tvTeamOneScore"
+ 	    android:textColor="#FFFFFF"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        />
+ 	<TextView 
+        android:id="@+id/tvTeamTwoScore"
+        android:textColor="#FFFFFF"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        />
+    <ImageView 
+        android:id="@+id/ivTeamTwoLogo"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"/>
+ 	<TextView 
+ 	    android:id="@+id/tvTeamTwoName"
+ 	    android:textColor="#FFFFFF"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        />
     
 
-</ListView>
+</LinearLayout>

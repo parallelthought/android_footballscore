@@ -40,7 +40,7 @@ public class JSONParser {
 		try {
 			data = fetchJson.get();
 			mainJSONObj = new JSONObject(data);
-			mainJSONArr = mainJSONObj.getJSONArray("tabelle");
+			mainJSONArr = mainJSONObj.getJSONArray("spiele");
 
 			for(int j=0; j<=mainJSONArr.length();j++){
 				entry = mainJSONArr.getJSONObject(j);
