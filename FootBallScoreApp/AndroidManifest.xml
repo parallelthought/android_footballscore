@@ -32,6 +32,10 @@
             android:name="com.example.footballdb.ActivityResult"
             android:label="@string/title_activity_activity_result" >
         </activity>
+        <activity
+            android:name="com.example.footballdb.ResultDetailActivity"
+            android:label="@string/title_activity_result_detail" >
+        </activity>
     </application>
 
 </manifest>

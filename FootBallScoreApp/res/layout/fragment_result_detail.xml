@@ -1,0 +1,118 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.footballdb.ResultDetailActivity$PlaceholderFragment" >
+
+    <EditText
+        android:id="@+id/tvDetailResultFullTimeScore"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="text"
+        android:text="5:2"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/tvDetailResultHalfTimeScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDetailResultFullTimeScore"
+        android:layout_centerHorizontal="true"
+        android:text="(3:1)" />
+
+    <ImageView
+        android:id="@+id/ivDetailResultTeamOneLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tvDetailResultFullTimeScore"
+        android:layout_toLeftOf="@+id/tvDetailResultFullTimeScore"
+        android:src="@drawable/hertha_bsc" />
+
+    <ImageView
+        android:id="@+id/ivDetailResultTeamTwoLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tvDetailResultFullTimeScore"
+        android:layout_toRightOf="@+id/tvDetailResultFullTimeScore"
+        android:src="@drawable/tsg_hoffenheim" />
+
+    <TextView
+        android:id="@+id/tvDetailResultTeamOneName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ivDetailResultTeamOneLogo"
+        android:layout_below="@+id/ivDetailResultTeamOneLogo"
+        android:layout_marginLeft="24dp"
+        android:text="Hertha BSC" />
+
+    <TextView
+        android:id="@+id/tvDetailResultTeamTwoName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvDetailResultTeamOneName"
+        android:layout_alignBottom="@+id/tvDetailResultTeamOneName"
+        android:layout_alignRight="@+id/ivDetailResultTeamTwoLogo"
+        android:text="TSG Hoffenheim" />
+
+    <TextView
+        android:id="@+id/tvDetailResultMatchStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ivDetailResultTeamOneLogo"
+        android:layout_below="@+id/tvDetailResultTeamOneName"
+        android:layout_marginTop="34dp"
+        android:text="Match Start" />
+
+    <TextView
+        android:id="@+id/tvDetailResultMatchTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvDetailResultMatchStart"
+        android:layout_toRightOf="@+id/tvDetailResultTeamOneName"
+        android:text="01.02.14 15:30 Uhr" />
+
+    <TextView
+        android:id="@+id/tvDetailResultAudience"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvDetailResultStadium"
+        android:layout_below="@+id/tvDetailResultStadium"
+        android:layout_marginTop="14dp"
+        android:text="Audience" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvDetailResultAudience"
+        android:layout_alignBottom="@+id/tvDetailResultAudience"
+        android:layout_toRightOf="@+id/tvDetailResultTeamOneName"
+        android:text="71,000" />
+
+    <TextView
+        android:id="@+id/tvDetailResultStdName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvDetailResultAudience"
+        android:layout_toRightOf="@+id/tvDetailResultTeamOneName"
+        android:text="Allianz Arena" />
+
+    <TextView
+        android:id="@+id/tvDetailResultStadium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvDetailResultMatchStart"
+        android:layout_below="@+id/tvDetailResultMatchStart"
+        android:layout_marginTop="18dp"
+        android:text="Stadium" />
+
+
+     
+</RelativeLayout>

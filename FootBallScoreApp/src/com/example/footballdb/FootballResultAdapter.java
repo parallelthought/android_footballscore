@@ -36,7 +36,7 @@ public class FootballResultAdapter extends ArrayAdapter<FootballResultModel> {
 		
 		FootballResultModel item = items.get(position);
 		
-		TextView tvTeamOneName = (TextView) convertView.findViewById(R.id.tvTeamOneName);
+		TextView tvTeamOneName = (TextView) convertView.findViewById(R.id.tvDetailResultTeamOneName);
 		tvTeamOneName.setText(String.valueOf(item.getTeamOneName()));
 		
 		ImageView ivTeamOneLogo = (ImageView) convertView.findViewById(R.id.ivTeamOneLogo);
