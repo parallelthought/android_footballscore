@@ -127,5 +127,10 @@ public class JSONParser {
 		
 		return footballList;
 	}
+
+	public ResultDetailModel parseResultDetail(String result) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

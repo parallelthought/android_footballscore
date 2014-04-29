@@ -3,12 +3,14 @@ package com.example.footballdb;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.os.Build;
 
 public class ResultDetailActivity extends ActionBarActivity {
@@ -22,6 +24,8 @@ public class ResultDetailActivity extends ActionBarActivity {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
+		
+		
 	}
 
 	@Override
@@ -52,13 +56,37 @@ public class ResultDetailActivity extends ActionBarActivity {
 		public PlaceholderFragment() {
 		}
 
-		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
 			View rootView = inflater.inflate(R.layout.fragment_result_detail,
 					container, false);
+			
+			Bundle args = getArguments();
+			
+			DownloadTask dt = new DownloadTask();
+			dt.execute(" " + args.getInt("match_day") + "/bericht/" + args.getInt("match_id"));
+			
+			String result;
+			ResultDetailModel myModel;
+			
+			try{
+				result = dt.get();
+				JSONParser parser = new JSONParser();
+				myModel = parser.parseResultDetail(result);
+				mapModel2View(rootView,myModel);
+				
+			} catch (Exception e){
+				e.printStackTrace();
+			}
+			
 			return rootView;
 		}
+
+		private void mapModel2View(View rootView, ResultDetailModel myModel) {
+			// TODO Auto-generated method stub
+			
+		}
+		
 	}
 
 }

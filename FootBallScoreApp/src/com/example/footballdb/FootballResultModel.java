@@ -2,6 +2,7 @@ package com.example.footballdb;
 
 public class FootballResultModel {
 	
+	private int matchID;
 	private int teamOneTore;
 	private String teamOneName;
 	private String teamOneLogo;
@@ -10,7 +11,12 @@ public class FootballResultModel {
 	private String teamTwoName;
 	private String teamTwoLogo;
 	
-	
+	public int getMatchID() {
+		return matchID;
+	}
+	public void setMatchID(int matchID) {
+		this.matchID = matchID;
+	}
 	public int getTeamOneTore() {
 		return teamOneTore;
 	}
@@ -46,8 +52,6 @@ public class FootballResultModel {
 	}
 	public void setTeamTwoLogo(String teamTwoLogo) {
 		this.teamTwoLogo = teamTwoLogo;
-	}
-	
-	
+	}	
 
 }

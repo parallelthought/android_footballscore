@@ -6,12 +6,14 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.os.Build;
 
 public class ActivityResult extends ActionBarActivity {
@@ -52,13 +54,15 @@ public class ActivityResult extends ActionBarActivity {
 	 */
 	public static class PlaceholderFragment extends ListFragment {
 		
+		ArrayList<FootballResultModel> footballResultList;
+		
 		public PlaceholderFragment() {
 		}
 
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
 			
-			ArrayList<FootballResultModel> footballResultList;
+			
 			FootballResultAdapter footballResultAdapter;
 			
 			View rootView = inflater.inflate(R.layout.fragment_result,
@@ -71,6 +75,14 @@ public class ActivityResult extends ActionBarActivity {
 			setListAdapter(footballResultAdapter);
 			
 			return rootView;
+		}
+		
+		public void onListItemClick(ListView l, View v, int position, long id) {
+			// TODO Auto-generated method stub
+			footballResultList.get(position).getMatchID();
+			
+			Intent i = new Intent (v.getContext(), ResultDetailActivity.class);
+			startActivity(i);
 		}
 
 	}
