@@ -17,11 +17,13 @@ import android.widget.ListView;
 import android.os.Build;
 
 public class ActivityResult extends ActionBarActivity {
-
+	
+	private static int dateOfMatch = 23;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_result);
+		this.setTitle("Results of the match day ");
 
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
@@ -69,7 +71,7 @@ public class ActivityResult extends ActionBarActivity {
 					container, false);
 			
 			JSONParser parse = new JSONParser();
-			footballResultList = parse.Results();
+			footballResultList = parse.results(dateOfMatch);
 			
 			footballResultAdapter = new FootballResultAdapter(container.getContext(), R.layout.result_line_item, footballResultList);
 			setListAdapter(footballResultAdapter);
@@ -79,9 +81,11 @@ public class ActivityResult extends ActionBarActivity {
 		
 		public void onListItemClick(ListView l, View v, int position, long id) {
 			// TODO Auto-generated method stub
-			footballResultList.get(position).getMatchID();
+			
+			System.out.println("This is the position ID " + footballResultList.get(position).getMatchID());
 			
 			Intent i = new Intent (v.getContext(), ResultDetailActivity.class);
+			i.putExtra("matchID", footballResultList.get(position).getMatchID());
 			startActivity(i);
 		}
 

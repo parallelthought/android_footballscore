@@ -9,9 +9,9 @@ import org.json.JSONObject;
 
 public class JSONParser {
 
-	protected ArrayList<FootballResultModel> Results(){
-		
-		String resultURL = "https://www.dein-weg-in-die-cloud.de/tomcat7/RestSoccer/fussball/spieltag/23";
+	protected ArrayList<FootballResultModel> results(int dateOfMatch){
+	
+		String resultURL = "https://www.dein-weg-in-die-cloud.de/tomcat7/RestSoccer/fussball/spieltag/"+dateOfMatch;
 		
 		ArrayList<FootballResultModel> footballResultList;
 		String data=null ;
@@ -20,8 +20,6 @@ public class JSONParser {
 		JSONObject teamTwoJSONObj;
 		
 		JSONArray mainJSONArr;
-		JSONArray teamOneJSONArr;
-		JSONArray teamTwoJSONArr;
 		JSONObject entry;
 		
 		int teamOneTore;
@@ -78,7 +76,7 @@ public class JSONParser {
 		
 	}
 	
-	protected ArrayList<FootballModel> Ranking(){
+	protected ArrayList<FootballModel> ranking(){
 		
 		String URL="https://www.dein-weg-in-die-cloud.de/tomcat7/RestSoccer/fussball/tabelle";
 		

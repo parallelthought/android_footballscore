@@ -15,5 +15,7 @@
     <string name="title_activity_activity_result">ActivityResult</string>
     <string name="resultURL">https://www.dein-weg-in-die-cloud.de/tomcat7/RestSoccer/fussball/spieltag/23</string>
     <string name="title_activity_result_detail">ResultDetailActivity</string>
+    <string name="ResultActPreviousBtn">Previous</string>
+    <string name="ResultActNextBtn">Next</string>
 
 </resources>
