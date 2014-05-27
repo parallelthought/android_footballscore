@@ -80,6 +80,7 @@ public class MainActivity extends ActionBarActivity {
 				@Override
 				public void onClick(View v) {
 					Intent i = new Intent (v.getContext(), ActivityResult.class);
+					i.putExtra("matchDay", 22);
 					startActivity(i);
 				}
 			});

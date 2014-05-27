@@ -1,6 +1,7 @@
 package com.example.footballdb;
 
 import java.util.ArrayList;
+
 import android.support.v4.app.ListFragment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 public class ActivityRanking extends ActionBarActivity {
 
@@ -66,7 +68,7 @@ public class ActivityRanking extends ActionBarActivity {
 			
 			footballAdapter = new FootballAdapter(container.getContext(), R.layout.ranking_line_item, footballList);
 			setListAdapter(footballAdapter);
-					
+			
 			return rootView;
 		}
 		

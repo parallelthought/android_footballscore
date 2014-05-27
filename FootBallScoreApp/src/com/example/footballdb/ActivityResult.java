@@ -13,17 +13,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 import android.os.Build;
 
 public class ActivityResult extends ActionBarActivity {
 	
-	private static int dateOfMatch = 23;
+	public static int dateOfMatch;
+	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) {		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_result);
-		this.setTitle("Results of the match day ");
+		dateOfMatch = getIntent().getIntExtra("matchDay",2);
+		System.out.println("Date of the match is " + dateOfMatch);
+		
+		this.setTitle("Results of the match day " + dateOfMatch);
 
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
@@ -64,17 +69,46 @@ public class ActivityResult extends ActionBarActivity {
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
 			
-			
 			FootballResultAdapter footballResultAdapter;
 			
 			View rootView = inflater.inflate(R.layout.fragment_result,
 					container, false);
+			
+			ListView listView = new ListView(rootView.getContext());
 			
 			JSONParser parse = new JSONParser();
 			footballResultList = parse.results(dateOfMatch);
 			
 			footballResultAdapter = new FootballResultAdapter(container.getContext(), R.layout.result_line_item, footballResultList);
 			setListAdapter(footballResultAdapter);
+			
+			//Button objects
+			Button previousBtn = (Button) rootView.findViewById(R.id.ResultActPreviousBtn);
+			Button nextBtn = (Button) rootView.findViewById(R.id.ResultActNextBtn);
+			
+			//Previous Button on click listeners
+			previousBtn.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					int matchDay = dateOfMatch - 1;
+					Intent i = new Intent (v.getContext(), ActivityResult.class);
+					i.putExtra("matchDay", matchDay);
+					startActivity(i);
+				}
+			});
+			
+			//Previous Button on click listeners
+			nextBtn.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					int matchDay = dateOfMatch + 1;
+					Intent i = new Intent (v.getContext(), ActivityResult.class);
+					i.putExtra("matchDay", matchDay);
+					startActivity(i);
+				}
+			});
 			
 			return rootView;
 		}
