@@ -6,6 +6,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -25,15 +27,26 @@ public class ActivityResult extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_result);
+		
+		ViewPager mPager = (ViewPager) findViewById(R.id.pager); 
+		ScreenSlidePagerAdapter mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager()); 
+		mPager.setAdapter(mPagerAdapter); 
+		mPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() { 
+			@Override 
+			public void onPageSelected(int position) { 
+				//invalidateOptionsMenu(); 
+				} 
+			});
+		
 		dateOfMatch = getIntent().getIntExtra("matchDay",2);
 		System.out.println("Date of the match is " + dateOfMatch);
 		
 		this.setTitle("Results of the match day " + dateOfMatch);
 
-		if (savedInstanceState == null) {
+		/*if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
-		}
+		}*/
 	}
 
 	@Override
@@ -66,6 +79,14 @@ public class ActivityResult extends ActionBarActivity {
 		public PlaceholderFragment() {
 		}
 
+		public static PlaceholderFragment create(int matchday) { 
+			PlaceholderFragment fragment = new PlaceholderFragment(); 
+			Bundle args = new Bundle(); 
+			args.putInt("ARG_MATCHDAY", matchday); 
+			fragment.setArguments(args); 
+			return fragment; 
+		}
+		
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
 			
@@ -74,7 +95,8 @@ public class ActivityResult extends ActionBarActivity {
 			View rootView = inflater.inflate(R.layout.fragment_result,
 					container, false);
 			
-			ListView listView = new ListView(rootView.getContext());
+			//ListView listView = new ListView(mActivity);
+			
 			
 			JSONParser parse = new JSONParser();
 			footballResultList = parse.results(dateOfMatch);
@@ -121,8 +143,8 @@ public class ActivityResult extends ActionBarActivity {
 			Intent i = new Intent (v.getContext(), ResultDetailActivity.class);
 			i.putExtra("matchID", footballResultList.get(position).getMatchID());
 			startActivity(i);
-		}
-
+		}	
+		
 	}
 
 }

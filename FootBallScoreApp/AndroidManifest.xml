@@ -26,15 +26,27 @@
         </activity>
         <activity
             android:name="com.example.footballdb.ActivityRanking"
-            android:label="@string/title_activity_activity_ranking" >
+            android:label="@string/title_activity_activity_ranking" 
+            android:parentActivityName="com.example.footballdb.MainActivity">
+            <meta-data 
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.footballdb.MainActivity"/>
         </activity>
         <activity
             android:name="com.example.footballdb.ActivityResult"
-            android:label="@string/title_activity_activity_result" >
+            android:label="@string/title_activity_activity_result" 
+            android:parentActivityName="com.example.footballdb.MainActivity">
+            <meta-data 
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.footballdb.MainActivity"/>
         </activity>
         <activity
             android:name="com.example.footballdb.ResultDetailActivity"
-            android:label="@string/title_activity_result_detail" >
+            android:label="@string/title_activity_result_detail" 
+            android:parentActivityName="com.example.footballdb.MainActivity">
+            <meta-data 
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.footballdb.MainActivity"/>
         </activity>
     </application>
 
